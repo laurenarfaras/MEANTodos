@@ -7,5 +7,11 @@
 
   function TodoController($scope){
     $scope.message = "I WORK!";
+    $scope.greeting ='Hello';
+    $scope.print = print;
+
+    function print(something){
+      console.log(something);
+    }
   }
 })()
