@@ -10,8 +10,14 @@
     function getAll(){
       return $http.get(baseURL);
     }
+
+    function create(newTodo){
+      return $http.post(baseURL, newTodo);
+    }
+
     return{
-      getAll: getAll
+      getAll: getAll,
+      create: create
     };
   }
 }());
