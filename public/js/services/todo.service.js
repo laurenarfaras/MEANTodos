@@ -15,9 +15,14 @@
       return $http.post(baseURL, newTodo);
     }
 
+    function deleteTodo(newTodo){
+      return $http.delete(`${baseURL}/${newTodo._id}`);
+    }
+
     return{
       getAll: getAll,
-      create: create
+      create: create,
+      delete: deleteTodo
     };
   }
 }());
