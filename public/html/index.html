@@ -10,13 +10,22 @@
 
   <div ng-controller="TodoController">
     <input type="text" ng-model="newTodo.description">
-    <button ng-click="addTodo(newTodo)">Add Todo</button>
+    <button ng-click="addTodo(newTodo)">add todo</button>
     <hr>
     <ul>
-      <li ng-repeat="todo in todos">
-        {{ todo.description }}
-        <button ng-click="deleteTodo(todo)">&times;</button>
-      </li>
+        <li ng-repeat="todo in todos">
+          <!-- hide when the todo is being edited -->
+          <div ng-hide="todo.edit">
+            {{ todo.description }}
+            <button ng-click="edit(todo)">edit</button>
+            <button ng-click="deleteTodo(todo)">&times;</button>
+          </div>
+          <!-- show when the todo is being edited -->
+          <div ng-show="todo.edit">
+            <input type="text" ng-model="todo.description">
+            <button ng-click="update(todo)">update</button>
+          </div>
+        </li>
     </ul>
   </div>
   <script src="js/app.js"></script>

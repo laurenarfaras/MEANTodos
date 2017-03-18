@@ -19,10 +19,15 @@
       return $http.delete(`${baseURL}/${newTodo._id}`);
     }
 
+    function update(todo){
+      return $http.put(`${baseURL}/${todo._id}`, todo);
+    }
+
     return{
       getAll: getAll,
       create: create,
-      delete: deleteTodo
+      delete: deleteTodo,
+      update: update
     };
   }
 }());
