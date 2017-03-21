@@ -6,6 +6,10 @@ body {
   margin: 1em;
 }
 
+li {
+  width: 100%;
+}
+
 .borderless {
   border: none;
   background-color: transparent;
