@@ -1,3 +1,16 @@
 body {
-  background-color: pink;
+  background-color: rgba(231, 184, 182, 0.7);
+  margin: 1em;
+}
+.strike {
+  text-decoration: line-through;
+}
+
+li {
+  width: 100%;
+}
+
+.borderless {
+  border: none;
+  background-color: transparent;
 }

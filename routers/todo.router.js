@@ -3,7 +3,7 @@ var todoRouter = express.Router();
 var Todo = require("../models/todo.model");
 
 //GET /todos
-todoRouter.get('/todos', function(req, res){
+todoRouter.get("/todos", function(req, res){
   Todo.find({}, function(err, documents){
     if(err){
       res.status(500).json({
@@ -18,7 +18,7 @@ todoRouter.get('/todos', function(req, res){
 });
 //GET /todos/:id
 todoRouter.get('/todos/:id', function(req, res){
-  Animal.find({_id: req.params.id}, function(err, documents){
+  Todo.find({_id: req.params.id}, function(err, documents){
     if(err){
       res.status(500).json({
         msg: err
@@ -32,7 +32,7 @@ todoRouter.get('/todos/:id', function(req, res){
 });
 //POST /todos
 todoRouter.post('/todos', function(req, res){
-  var todos = new Todo(req.body);
+  var todo = new Todo(req.body);
   todo.save(function(err, document){
     if(err){
       res.status(500).json({
@@ -61,14 +61,14 @@ todoRouter.put('/todos/:id', function(req, res){
 });
 //DELETE /todos/:id
 todoRouter.delete('/todos/:id', function(req, res){
-  Todo.remove({_id: req.params.id}, function(err, document){
+  Todo.remove({_id: req.params.id}, function(err){
     if(err){
       res.status(500).json({
         msg: err
       });
     } else {
       res.status(200).json({
-        msg: 'Successfully delete'
+        msg: "Successfully deleted"
       });
     }
   });

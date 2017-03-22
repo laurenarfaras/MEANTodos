@@ -2,8 +2,14 @@ var mongoose = require("mongoose");
 
 // Create the Mongoose Schema
 var todoSchema = mongoose.Schema({
-  description: String,
-  completed: Boolean
+  description: {
+    type: String,
+    required: true
+  },
+  completed: {
+    type: Boolean,
+    default: false
+  }
 });
 
 // Create the Mongoose Model
